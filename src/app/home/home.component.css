@@ -1,0 +1,488 @@
+
+
+@media (max-width: 768px) {
+    .home-title, .home-author {
+        font-size: 50px !important;
+    }
+
+    .home-author {
+        line-height: 4rem !important;
+    }
+  }
+
+
+  
+
+.home-container {
+    background: #141a20;
+    padding: 40px 20px;
+    border-radius: 8px;
+    width: 100%; /* Full viewport width */
+    height: 100vh;
+    overflow-y:scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-left-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.text-left {
+    margin: 80px;
+    text-align: start;
+}
+
+@keyframes titleEffect {
+  0% {
+    transform: translateY(100px); /* Start position below the viewport */
+    opacity: 0; /* Start as invisible */
+  }
+  100% {
+    transform: translateY(0); /* End position at the original place */
+    opacity: 1; /* End as fully visible */
+  }
+}
+
+@keyframes profileImageEffect {
+  0% {
+    transform: translateY(-100px); /* Start position above the viewport */
+    opacity: 0; /* Start as invisible */
+  }
+  100% {
+    transform: translateY(0); /* End position at the original place */
+    opacity: 1; /* End as fully visible */
+  }
+}
+
+.home-title {
+    font-size: 5rem;
+    animation: titleEffect 1s cubic-bezier(0, 0.2, 0.4, 1) both;
+    color: #e0f0ff;
+    margin-bottom: 5rem;
+    line-height: 4rem;
+}
+
+.home-author {
+    font-size: 3.5rem;
+    color: #b0caf063;
+    margin-bottom: 3rem;
+}
+
+#dynamic-text {
+    border-right: 2px solid #00FF00;
+    padding-right: 5px;
+    animation: blink-caret 0.7s step-end infinite;
+    color: #00FF00;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00FF00; }
+}
+
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; /* Adjust as needed */
+    width: 100%;
+    
+    
+  }
+  
+  .profile-image {
+    animation: profileImageEffect 1s ease-in-out forwards;
+    animation-fill-mode: both;
+    border-radius: 50%;
+    /* box-shadow: 0 25px 45px -20px black; */
+    box-shadow: 0 25px 45px -20px rgba(0, 0, 0, 0.5), /* Existing shadow */
+              0 0 40px rgba(1, 139, 1, 0.897); /* Outer glow */
+    width: 15%; /* Reduced size to make the image smaller */
+    object-fit: cover;
+    position: relative;
+    bottom: 630px;
+    
+  }
+  
+  /* Responsiveness */
+  @media only screen and (max-width: 1200px) {
+    .profile-image {
+      width: 30%;
+    }
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .profile-image {
+      width: 40%;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .profile-image {
+      width: 40%;
+      bottom: 50px;
+    }
+  }
+
+  @media only screen and (max-width: 820px) {
+    .profile-image {
+      width: 40%;
+      bottom: 90px;
+      display: block;
+      margin-left: 250px; /* Centers the image */
+      position: relative;
+    }
+
+    .home-author {
+      line-height: 3.5rem !important; /* Adjusted line height */
+      font-size: 3.5rem !important;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .container {
+      justify-content: center; /* Center image on smaller screens */
+    }
+    
+    .profile-image {
+      width: 50%;
+      bottom: 90px;
+      display: block;
+      margin-left: 250px; /* Centers the image */
+      position: relative;
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .profile-image {
+      width: 80%;
+      bottom: -50px;
+    }
+  }
+
+  @media (min-width: 1045px) and (max-width: 1276px) {
+    .profile-image {
+      width: 30%;
+      bottom: 100px;
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 425px) {
+    .home-title {
+      font-size: 1.2rem !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 1.5rem; /* Adjusted line height */
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      text-align: center;
+      word-wrap: break-word;
+      margin-left: -55px;
+      margin-right: 10px;
+    }
+  
+    .home-author {
+      line-height: 1.5rem !important; /* Adjusted line height */
+      font-size: 1.1rem !important;
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      text-align: center;
+      word-wrap: break-word;
+      margin-left: -55px;
+      margin-right: 10px;
+    }
+  
+    .details {
+      font-size:15px; /* Adjusted font size */
+      line-height: 2rem !important; /* Adjusted line height */
+      width: 320px;
+      height: 530px;
+      text-align: left; /* Ensures text is justified */
+      margin: 0 auto; /* Centers the content */
+      display: block;
+      /* Add this to display text in a row instead of a column */
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      text-align: center;
+      word-wrap: break-word;
+      margin-left: -55px;
+      margin-right: 30px;
+    }
+  
+    .profile-image {
+      width: 80%; /* Adjusted width for better proportion */
+      bottom: -30px; /* Adjusted positioning */
+      display: block;
+      margin-left: 50px; /* Centers the image */
+      position: relative;
+    }
+    .button{
+      height: 10%;
+      width: 99%;
+      flex: auto;
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      word-wrap: break-word;
+    }
+    .button a{
+      font-size:medium;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 425px) and (max-width: 430px) {
+    .home-title {
+      font-size: 1.2rem !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 1.5rem; /* Adjusted line height */
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      text-align: center;
+      word-wrap: break-word;
+      margin-left: -55px;
+      margin-right: 10px;
+    }
+  
+    .home-author {
+      line-height: 1.5rem !important; /* Adjusted line height */
+      font-size: 1.1rem !important;
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      text-align: center;
+      word-wrap: break-word;
+      margin-left: -55px;
+      margin-right: 10px;
+    }
+  
+    .details {
+      font-size:15px; /* Adjusted font size */
+      line-height: 2rem !important; /* Adjusted line height */
+      width: 320px;
+      height: 530px;
+      text-align: left; /* Ensures text is justified */
+      margin: 0 auto; /* Centers the content */
+      display: block;
+      /* Add this to display text in a row instead of a column */
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      text-align: center;
+      word-wrap: break-word;
+      margin-left: -55px;
+      margin-right: 30px;
+    }
+  
+    .profile-image {
+      width: 80%; /* Adjusted width for better proportion */
+      bottom: -30px; /* Adjusted positioning */
+      display: block;
+      margin-left: 50px; /* Centers the image */
+      position: relative;
+    }
+    .button{
+      height: 10%;
+      width: 99%;
+      flex: auto;
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      word-wrap: break-word;
+    }
+    .button a{
+      font-size:medium;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 540px) and (max-width: 576px) {
+    .home-title {
+      font-size: 1.2rem !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 1.5rem; /* Adjusted line height */
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      text-align: center;
+      word-wrap: break-word;
+      margin-left: 15px;
+      margin-right: 10px;
+    }
+  
+    .home-author {
+      line-height: 1.7rem !important; /* Adjusted line height */
+      font-size: 2rem !important;
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      text-align: center;
+      word-wrap: break-word;
+      margin-left: 15px;
+      margin-right: 10px;
+    }
+  
+    .details {
+      font-size:15px; /* Adjusted font size */
+      line-height: 2rem !important; /* Adjusted line height */
+      width: 320px;
+      height: 530px;
+      text-align: center; /* Ensures text is justified */
+      margin: 0 auto; /* Centers the content */
+      display: block;
+      /* Add this to display text in a row instead of a column */
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      word-wrap: break-word;
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+  
+    .profile-image {
+      width: 80%; /* Adjusted width for better proportion */
+      bottom: -30px; /* Adjusted positioning */
+      display: block;
+      margin-left: 50px; /* Centers the image */
+      position: relative;
+    }
+    .button{
+      height: 10%;
+      width: 99%;
+      flex: auto;
+      display: flex;
+      flex-direction: row; 
+      flex-wrap: wrap; /* Allow text to wrap if it's too long */
+      word-wrap: break-word;
+    }
+    .button a{
+      font-size: larger;
+      text-align: center;
+    }
+  }
+  
+
+  @media only screen and (min-width: 375px) {
+    .home-title {
+      font-size: 26px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 412px) {
+    .home-title {
+      font-size: 30px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+
+    .home-author {
+      line-height: 1.5rem !important; /* Adjusted line height */
+      font-size: 1.5rem !important;
+    }
+  }
+
+  @media only screen and (min-width: 390px) {
+    .home-title {
+      font-size: 27px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 430px) {
+    .home-title {
+      font-size: 33px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 360px) {
+    .home-title {
+      font-size: 22px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 412px) {
+    .home-title {
+      font-size: 30px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 344px) {
+    .home-title {
+      font-size: 20px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 412px) {
+    .home-title {
+      font-size: 30px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 853px) {
+    .home-title {
+      font-size: 50px !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+
+    .home-author {
+      line-height: 4rem !important;
+  }
+  } 
+
+  @media only screen and (min-width: 1024px) and (max-width: 1500px){
+    .home-title {
+      font-size: 4.5rem !important;
+      color: #e0f0ff;
+      margin-bottom: 4rem;
+      line-height: 3rem;
+    }
+
+    .home-author {
+      line-height: 1.7rem !important; /* Adjusted line height */
+      font-size: 3.5rem !important;
+    }
+
+    .profile-image {
+      width: 15%; /* Adjusted width for better proportion */
+      bottom: 592px; /* Adjusted positioning */
+      display: block;
+      margin-left: 50px; /* Centers the image */
+      position: relative;
+    }
+  }
+  
+  

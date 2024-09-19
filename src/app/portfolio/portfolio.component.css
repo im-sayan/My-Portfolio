@@ -1,0 +1,62 @@
+/* Main card styling */
+.main-project-card {
+    background: linear-gradient(135deg, #27333f8f, #27333f8f); /* Gradient for premium look */
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    max-height: 600px; /* Adjust based on your layout */
+}
+
+/* Scrollable content inside the main card */
+.scrollable-content {
+    max-height: 500px;
+    overflow-y: scroll; /* Keep scrolling but hide the scrollbar */
+    padding-right: 10px;
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Scrollbar for webkit browsers */
+.scrollable-content::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Title styling */
+.main-project-card h2 {
+    color: #f3f3f3;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    /* background: linear-gradient(135deg, #27333f8f, #27333f8f); */
+    background-color: 27333f8f;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Ensure title stays above scrolling content */
+}
+
+/* General card styling for sub-cards */
+.app-project-card {
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sub-card hover effect */
+.app-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .app-project-card {
+        height: auto; /* Adjust for small screens */
+    }
+}
